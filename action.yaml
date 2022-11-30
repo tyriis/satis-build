@@ -24,7 +24,7 @@ runs:
           --no-cache --no-progress --no-interaction -o \
           --ignore-platform-reqs
 
-        composer g config --no-plugins allow-plugins.composer/satis true
+        composer global config --no-plugins allow-plugins.composer/satis true
 
         php $COMPOSER_HOME/vendor/bin/satis build ${{ inputs.satis_config }} -n
 
