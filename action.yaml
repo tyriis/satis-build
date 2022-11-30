@@ -24,6 +24,8 @@ runs:
           --no-cache --no-progress --no-interaction -o \
           --ignore-platform-reqs
 
+        composer g config --no-plugins allow-plugins.composer/satis
+
         php $COMPOSER_HOME/vendor/bin/satis build ${{ inputs.satis_config }} -n
 
         if cat ${{ inputs.satis_config }} | jq .archive -e; then
